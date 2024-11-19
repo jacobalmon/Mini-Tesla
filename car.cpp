@@ -3,10 +3,10 @@
 // Define Pins for Hardware.
 DigitalIn ultrasonic_sensor_trigger();
 DigitalIn ultrasonic_sensor_echo();
-DigitalOut motor_forward();
-DigitalOut motor_backward();
-DigitalOut motor_left();
-DigitalOut motor_right();
+DigitalOut motor_front_left();
+DigitalOut motor_front_right();
+DigitalOut motor_back_left();
+DigitalOut motor_back_right();
 Serial bluetooth();
 
 // Constraints.
