@@ -1,8 +1,8 @@
 #include "mbed.h"
 
 // Define Pins for Hardware.
-DigitalIn ultrasonic_sensor_trigger();
-DigitalIn ultrasonic_sensor_echo();
+DigitalIn ultrasonic_sensor_trigger(D12);
+DigitalIn ultrasonic_sensor_echo(A2);
 DigitalOut motor_front_left();
 DigitalOut motor_front_right();
 DigitalOut motor_back_left();
