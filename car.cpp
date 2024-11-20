@@ -37,6 +37,22 @@ int main() {
     }
 }
 
+void bluetooth_communication() {
+    // Check if any data has been received over Bluetooth.
+
+    // Get the Character from the Bluetooth.
+}
+
+void detect_obstacle() {
+    // Send pulse to ultrasonic sensor to trigger measurement.
+
+    // Measure echo pulse duration.
+
+    // Calculate distance in cm.
+
+    // Set Obstacle Detected Flag.
+}
+
 void movement_control() {
     // Stop the car if object detected.
     if (obstacle_detected) {
@@ -67,4 +83,10 @@ void movement_control() {
             
         }
     }
+}
+
+void send_alert() {
+    // Send Alert Message for Movement Command.
+
+    // Send Alert Message for Obstacle Detected.
 }
