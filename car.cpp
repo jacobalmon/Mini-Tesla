@@ -22,7 +22,7 @@ const int OBSTACLE_THRESHOLD = 10;
 
 // Global Varaibles.
 bool obstacle_detected = false;
-string movement_command = "Stop";
+string movement_command = "S";
 
 // Function Prototypes.
 void bluetooth_communication();
@@ -38,4 +38,19 @@ int main() {
 }
 
 void movement_control() {
+    if (obstacle_detected) {
+        movement_command == "S";
+        driver1_in1 = 0;
+        driver1_in2 = 0;
+        driver1_in3 = 0;
+        driver1_in4 = 0;
+        driver2_in1 = 0;
+        driver2_in2 = 0;
+        driver2_in3 = 0;
+        driver2_in4 = 0;
+    } else {
+        if (movement_command == "F") {
+            
+        } else if (movement_command == "") 
+    }
 }
