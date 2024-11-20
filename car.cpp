@@ -38,6 +38,7 @@ int main() {
 }
 
 void movement_control() {
+    // Stop the car if object detected.
     if (obstacle_detected) {
         movement_command == "S";
         driver1_in1 = 0;
@@ -49,14 +50,19 @@ void movement_control() {
         driver2_in3 = 0;
         driver2_in4 = 0;
     } else {
+        // Move Car Forwards.
         if (movement_command == "F") {
             
+        // Move Car Backwards.
         } else if (movement_command == "B") {
             
+        // Move Car Left.
         } else if (movement_command == "L") {
             
+        // Move Car Right.
         } else if (movement_command == "R") {
             
+        // Stop Car.
         } else if (movement_command == "S") {
             
         }
