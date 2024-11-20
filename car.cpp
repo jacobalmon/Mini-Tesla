@@ -36,3 +36,6 @@ int main() {
 
     }
 }
+
+void movement_control() {
+}
