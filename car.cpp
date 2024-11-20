@@ -51,6 +51,14 @@ void movement_control() {
     } else {
         if (movement_command == "F") {
             
-        } else if (movement_command == "") 
+        } else if (movement_command == "B") {
+            
+        } else if (movement_command == "L") {
+            
+        } else if (movement_command == "R") {
+            
+        } else if (movement_command == "S") {
+            
+        }
     }
 }
