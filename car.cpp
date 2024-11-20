@@ -1,13 +1,21 @@
 #include "mbed.h"
 
 // Define Pins for Hardware.
-DigitalIn ultrasonic_sensor_trigger(D12);
-DigitalIn ultrasonic_sensor_echo(A2);
-DigitalOut motor_front_left();
-DigitalOut motor_front_right();
-DigitalOut motor_back_left();
-DigitalOut motor_back_right();
-Serial bluetooth();
+DigitalOut ultrasonic_sensor_trigger(D9);
+DigitalIn ultrasonic_sensor_echo(D10);
+Serial bluetooth(D12, D13);
+PwmOut driver1_act1(D6);
+PwmOut driver1_act2(D11);
+DigitalOut driver1_in1(D2);
+DigitalOut driver1_in2(D3);
+DigitalOut driver1_in3(D4);
+DigitalOut driver1_in4(D5);
+PwmOut driver2_act1(D8);
+PwmOut driver2_act2(D7);
+DigitalOut driver2_in1(D12);
+DigitalOut driver2_in2(D13);
+DigitalOut driver2_in3(D9);
+DigitalOut driver2_in4(A0);
 
 // Constraints.
 const int OBSTACLE_THRESHOLD = 10;
