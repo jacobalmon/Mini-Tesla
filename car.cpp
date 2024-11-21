@@ -12,10 +12,10 @@ DigitalOut driver1_in3(D4);
 DigitalOut driver1_in4(D5);
 PwmOut driver2_act1(D8);
 PwmOut driver2_act2(D7);
-DigitalOut driver2_in1(D12);
-DigitalOut driver2_in2(D13);
-DigitalOut driver2_in3(D9);
-DigitalOut driver2_in4(A0);
+DigitalOut driver2_in1(D6);
+DigitalOut driver2_in2(D7);
+DigitalOut driver2_in3(D8);
+DigitalOut driver2_in4(D11);
 
 // Constraints.
 const int OBSTACLE_THRESHOLD = 10;
@@ -50,7 +50,7 @@ void detect_obstacle() {
 
     // Calculate distance in cm.
 
-    // Set Obstacle Detected Flag.
+    // Set Obstacle Detected Flag. 
 }
 
 void movement_control() {
