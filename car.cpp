@@ -33,7 +33,9 @@ void power_management();
 
 int main() {
     while (1) {
-
+        bluetooth_communication();
+        detect_obstacle();
+        wait_us(100000);
     }
 }
 
@@ -68,19 +70,54 @@ void movement_control() {
     } else {
         // Move Car Forwards.
         if (movement_command == "F") {
-            
+            driver1_in1 = 1;
+            driver1_in2 = 0;
+            driver1_in3 = 1;
+            driver1_in4 = 0;
+            driver2_in1 = 1;
+            driver2_in2 = 0;
+            driver2_in3 = 1;
+            driver2_in4 = 0;
         // Move Car Backwards.
         } else if (movement_command == "B") {
-            
+            driver1_in1 = 0;
+            driver1_in2 = 1;
+            driver1_in3 = 0;
+            driver1_in4 = 1;
+            driver2_in1 = 0;
+            driver2_in2 = 1;
+            driver2_in3 = 0;
+            driver2_in4 = 1;
         // Move Car Left.
         } else if (movement_command == "L") {
-            
+            driver1_in1 = 0;
+            driver1_in2 = 1;
+            driver1_in3 = 1;
+            driver1_in4 = 0;
+            driver2_in1 = 0;
+            driver2_in2 = 1;
+            driver2_in3 = 1;
+            driver2_in4 = 0;
         // Move Car Right.
         } else if (movement_command == "R") {
-            
+            driver1_in1 = 1;
+            driver1_in2 = 0;
+            driver1_in3 = 0;
+            driver1_in4 = 1;
+            driver2_in1 = 1;
+            driver2_in2 = 0;
+            driver2_in3 = 0;
+            driver2_in4 = 1;
         // Stop Car.
         } else if (movement_command == "S") {
-            
+            driver1_in1 = 0;
+            driver1_in2 = 0;
+            driver1_in3 = 0;
+            driver1_in4 = 0;
+            driver2_in1 = 0;
+            driver2_in2 = 0;
+            driver2_in3 = 0;
+            driver2_in4 = 0;
         }
     }
 }
