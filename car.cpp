@@ -4,14 +4,14 @@
 DigitalOut ultrasonic_sensor_trigger(D9);
 DigitalIn ultrasonic_sensor_echo(D10);
 Serial bluetooth(D12, D13);
-PwmOut driver1_act1(D6);
-PwmOut driver1_act2(D11);
+//PwmOut driver1_act1(D6);
+//PwmOut driver1_act2(D11);
 DigitalOut driver1_in1(D2);
 DigitalOut driver1_in2(D3);
 DigitalOut driver1_in3(D4);
 DigitalOut driver1_in4(D5);
-PwmOut driver2_act1(D8);
-PwmOut driver2_act2(D7);
+//PwmOut driver2_act1(D8);
+//PwmOut driver2_act2(D7);
 DigitalOut driver2_in1(D6);
 DigitalOut driver2_in2(D7);
 DigitalOut driver2_in3(D8);
@@ -22,7 +22,7 @@ const int OBSTACLE_THRESHOLD = 10;
 
 // Global Varaibles.
 bool obstacle_detected = false;
-string movement_command = "S";
+char movement_command = 'S';
 
 // Function Prototypes.
 void bluetooth_communication();
@@ -58,7 +58,7 @@ void detect_obstacle() {
 void movement_control() {
     // Stop the car if object detected.
     if (obstacle_detected) {
-        movement_command == "S";
+        movement_command = 'S';
         driver1_in1 = 0;
         driver1_in2 = 0;
         driver1_in3 = 0;
@@ -69,7 +69,7 @@ void movement_control() {
         driver2_in4 = 0;
     } else {
         // Move Car Forwards.
-        if (movement_command == "F") {
+        if (movement_command == 'F') {
             driver1_in1 = 1;
             driver1_in2 = 0;
             driver1_in3 = 1;
@@ -79,7 +79,7 @@ void movement_control() {
             driver2_in3 = 1;
             driver2_in4 = 0;
         // Move Car Backwards.
-        } else if (movement_command == "B") {
+        } else if (movement_command == 'B') {
             driver1_in1 = 0;
             driver1_in2 = 1;
             driver1_in3 = 0;
@@ -89,7 +89,7 @@ void movement_control() {
             driver2_in3 = 0;
             driver2_in4 = 1;
         // Move Car Left.
-        } else if (movement_command == "L") {
+        } else if (movement_command == 'L') {
             driver1_in1 = 0;
             driver1_in2 = 1;
             driver1_in3 = 1;
@@ -99,7 +99,7 @@ void movement_control() {
             driver2_in3 = 1;
             driver2_in4 = 0;
         // Move Car Right.
-        } else if (movement_command == "R") {
+        } else if (movement_command == 'R') {
             driver1_in1 = 1;
             driver1_in2 = 0;
             driver1_in3 = 0;
@@ -109,7 +109,7 @@ void movement_control() {
             driver2_in3 = 0;
             driver2_in4 = 1;
         // Stop Car.
-        } else if (movement_command == "S") {
+        } else if (movement_command == 'S') {
             driver1_in1 = 0;
             driver1_in2 = 0;
             driver1_in3 = 0;
