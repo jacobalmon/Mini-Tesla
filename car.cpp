@@ -38,9 +38,15 @@ int main() {
 }
 
 void bluetooth_communication() {
-    // Check if any data has been received over Bluetooth.
-
-    // Get the Character from the Bluetooth.
+   // Check if any data has been received over Bluetooth.
+    if (bluetooth.readable()) {
+        char received = bluetooth.getc(); // Read a single character from Bluetooth.
+        // Update the movement command only if it's a valid command
+        if (received == 'F' || received == 'B' || received == 'L' || 
+            received == 'R' || received == 'S') {
+            movement_command = received; // Update the movement command
+        }
+    }
 }
 
 void detect_obstacle() {
