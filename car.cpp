@@ -44,13 +44,46 @@ void bluetooth_communication() {
 }
 
 void detect_obstacle() {
-    // Send pulse to ultrasonic sensor to trigger measurement.
+   // Send pulse to ultrasonic sensor to trigger measurement.
+    ultrasonic_sensor_trigger = 1;
+    wait_us(10);
+    ultrasonic_sensor_trigger = 0;
+
+    //Wait for echo to be sent out (HIGH)
+    Timer timer;
+    //100ms timeout prevents infinite loop.
+    timer.start();
+    while (!ultrasonic_sensor_echo) {
+        if (timer.read_us() > 100000) {
+            // Assumes no response = no obstacle
+            obstacle_detected = false;  
+            return;
+        }
+    }
 
     // Measure echo pulse duration.
+    timer.reset();
+    while (ultrasonic_sensor_echo) {
+        //out of range 380ms max echo 
+        //NOTE: Can be adjusted to change the max detection distance
+        //380ms is jus what the documentation used
+        if (timer.read_us() > 380000) {
+            obstacle_detected = false;
+            return;
+        }
+    }
+    float pulse_duration = timer.read_us(); // Duration in microseconds
 
     // Calculate distance in cm.
+    float distance = pulse_duration * 0.034 / 2;
+
+    // Clear the screen and move the cursor to the home position
+    printf("\033[2J\033[H");    
+    printf("dist: %fcm\n", distance);
 
     // Set Obstacle Detected Flag. 
+    obstacle_detected = (distance < OBSTACLE_THRESHOLD);
+
 }
 
 void movement_control() {
