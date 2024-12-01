@@ -25,7 +25,6 @@ void bluetooth_communication();
 void detect_obstacle();
 void movement_control();
 void send_alert();
-void power_management();
 
 int main() {
     // Initialize Baud Rate.
