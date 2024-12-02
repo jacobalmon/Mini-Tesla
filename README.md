@@ -1,7 +1,7 @@
 # Obstacle Avoiding Car - README
 
 ## Introduction
-This project implements an **Obstacle Avoiding Car** using the **ST32-F401RE** microcontroller and **Ultrasonic Sensor (HC-SR04)** for obstacle detection. The car can be remotely controlled using a Bluetooth module (DX-BT24-A) to move forward, backward, left, or right. If an obstacle is detected within a predefined distance, the car will stop to avoid a collision.
+This project implements an **Obstacle Avoiding Car** using the **ST32-F401RE** microcontroller and **Ultrasonic Sensor (HC-SR04)** for obstacle detection. The car can be remotely controlled using a **Bluetooth module (DX-BT24-A)** to move forward, backward, left, or right. If an obstacle is detected within a predefined distance, the car will stop to avoid a collision.
 
 ### Key Features:
 - Remote control via Bluetooth using a mobile phone.
@@ -81,6 +81,7 @@ The motor driver controls the DC motors based on the received Bluetooth commands
    - Connect the ultrasonic sensor, Bluetooth module, and motor driver as described in the **Pin Connections** section.
    - Ensure your car’s motors are connected to the motor driver correctly.
    - Power the system using a battery or power supply suitable for the STM32 and motors.
+   - Image of setup at the end.
 
 2. **Upload the Code**:
    - Open the code in the **Mbed Studio** or **Mbed Online Compiler**.
