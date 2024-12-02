@@ -106,7 +106,6 @@ void detect_obstacle() {
     }
 }
 
-
 void movement_control() {
     // Stop the car if object detected.
     if (obstacle_detected && movement_command != 'B') {
