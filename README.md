@@ -17,6 +17,7 @@ This project implements an **Obstacle Avoiding Car** using the **STM32-F401RE** 
 - **DC Motors** for movement of the car.
 - **Buck Converter** for converting from 12V to 5V for MCU and other components.
 - Jumper wires and a power source (battery or external power supply).
+- Any Size Breadboards.
 
 ## Pin Connections
 | **Component**            | **Pin on ST32-F401RE** |
