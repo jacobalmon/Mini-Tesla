@@ -1,7 +1,7 @@
 # Obstacle Avoiding Car - README
 
 ## Introduction
-This project implements an **Obstacle Avoiding Car** using the **ST32-F401RE** microcontroller and **Ultrasonic Sensor (HC-SR04)** for obstacle detection. The car can be remotely controlled using a Bluetooth module (HC-05) to move forward, backward, left, or right. If an obstacle is detected within a predefined distance, the car will stop to avoid a collision.
+This project implements an **Obstacle Avoiding Car** using the **ST32-F401RE** microcontroller and **Ultrasonic Sensor (HC-SR04)** for obstacle detection. The car can be remotely controlled using a Bluetooth module (DX-BT24-A) to move forward, backward, left, or right. If an obstacle is detected within a predefined distance, the car will stop to avoid a collision.
 
 ### Key Features:
 - Remote control via Bluetooth using a mobile phone.
@@ -12,10 +12,11 @@ This project implements an **Obstacle Avoiding Car** using the **ST32-F401RE** m
 ## Hardware Requirements
 - **ST32-F401RE Nucleo Board** (or any STM32 board with compatible pins).
 - **Ultrasonic Sensor** (HC-SR04) for obstacle detection.
-- **Bluetooth Module** (HC-05 or similar) for wireless communication.
+- **Bluetooth Module** (DX-BT24-A or similar) for wireless communication (UART).
 - **Motor Driver** (e.g., L298N or any suitable driver for controlling the motors).
 - **DC Motors** for movement of the car.
 - Jumper wires and a power source (battery or external power supply).
+- Buck Converter to convert from 12V to 5V for MCU and other components.
 
 ## Pin Connections
 | **Component**            | **Pin on ST32-F401RE** |
@@ -54,6 +55,7 @@ The car can be controlled using a Bluetooth terminal app on your mobile phone. T
 ### Obstacle Detection:
 - The ultrasonic sensor is used to measure the distance to the nearest object in front of the car.
 - If the object is within a defined threshold (40 cm), the car will stop moving and print an alert via Bluetooth.
+- Note momentum and delays are a factor so it won't stop at 40 cm.
   
 ### Motor Control:
 The motor driver controls the DC motors based on the received Bluetooth commands:
