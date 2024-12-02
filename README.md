@@ -15,8 +15,8 @@ This project implements an **Obstacle Avoiding Car** using the **ST32-F401RE** m
 - **Bluetooth Module** (DX-BT24-A or similar) for wireless communication (UART).
 - **Motor Driver** (e.g., L298N or any suitable driver for controlling the motors).
 - **DC Motors** for movement of the car.
+- **Buck Converter** for converting from 12V to 5V for MCU and other components.
 - Jumper wires and a power source (battery or external power supply).
-- Buck Converter to convert from 12V to 5V for MCU and other components.
 
 ## Pin Connections
 | **Component**            | **Pin on ST32-F401RE** |
@@ -81,7 +81,8 @@ The motor driver controls the DC motors based on the received Bluetooth commands
    - Connect the ultrasonic sensor, Bluetooth module, and motor driver as described in the **Pin Connections** section.
    - Ensure your car’s motors are connected to the motor driver correctly.
    - Power the system using a battery or power supply suitable for the STM32 and motors.
-   - Image of setup at the end.
+   
+  ![schem](https://github.com/user-attachments/assets/28ea5864-eb6b-497b-b8d9-bd4b20bd2948)
 
 2. **Upload the Code**:
    - Open the code in the **Mbed Studio** or **Mbed Online Compiler**.
