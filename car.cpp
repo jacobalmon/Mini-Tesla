@@ -29,7 +29,7 @@ void send_alert();
 int main() {
     // Initialize Baud Rate.
     bluetooth.baud(9600);
-    // Wait for Motors to be Initialized.
+    // Wait for everything to be Initialized.
     wait_us(100000);
     // Run indefinately.
     while (1) {
